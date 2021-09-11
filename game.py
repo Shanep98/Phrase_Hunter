@@ -2,12 +2,11 @@
 from phrase import Phrase
 import random
 
-Valid_Letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 class Game():
     def __init__(self):
         self.missed = 0
-        self.phrases = [Phrase("Phrase("Stand in a straight circle"), Phrase("Both of you stand together separately"), Phrase("I am laughing so hard glitter came out my nose"), Phrase("What the voices in my head tell me to do"), Phrase(Taste the Rainbow")
+        self.phrases = [Phrase("Stand in a straight circle"), Phrase("Both of you stand together separately"), Phrase("I am laughing so hard glitter came out my nose"), Phrase("What the voices in my head tell me to do"), Phrase("Taste the Rainbow")
                        ]
         self.Valid_Letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         self.active_phrase = self.get_random_phrase()
@@ -47,13 +46,9 @@ class Game():
 
     def restart(self):
         again = input('Would you like to try again?(yes/no)  >')
-        while again.lower() != 'yes' or 'no':
-            print('please enter yes or no')
-            again = input('Would you like to try again?(yes/no)  >')
-        if again.lower() == 'yes':
-            start()
-        if again.lower() == 'no':
-            print('Thank you for playing')
-
-
-        
+        again = again.lower()
+        if again == 'yes':
+            self.guesses = [' ']
+            self.start()
+        else:
+            print('Thank you for playing.')

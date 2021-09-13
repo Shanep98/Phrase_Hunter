@@ -2,10 +2,13 @@
 from game import Game
 
 # Create your Dunder Main statement.
-if __name__ = "__main__":
+
 if __name__ == "__main__":
 
     game = Game()
+    game.welcome()
+    game.start()
+
 
 #    step 4 game=Game()
 #    for phrase in game.phrases:
@@ -28,5 +31,3 @@ if __name__ == "__main__":
 #    step 8 game.welcome()
 
 #    step 9
-    game.welcome()
-    game.start()

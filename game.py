@@ -48,7 +48,9 @@ class Game():
         again = input('Would you like to try again?(yes/no)  >')
         again = again.lower()
         if again == 'yes':
+            self.active_phrase = self.get_random_phrase()
             self.guesses = [' ']
+            self.missed = 0
             self.start()
         else:
             print('Thank you for playing.')
